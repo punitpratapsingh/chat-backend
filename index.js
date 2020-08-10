@@ -43,21 +43,7 @@ io.on('connect', (socket) => {
    if(messageBox.to)
    {
   const User2=getByEmail(messageBox.to);
-
-  //console.log(io.engine.clients[User2.id]);
-  //console.log(io.connected[User2.id])
-  //console.log(io.eio.clients[User2.id])
   io.to(User2.id).emit("message", { ...messageBox,name:user.name});
-  //io.to('/#' + User2.id).emit("message", { ...messageBox,name:User2.name})
-  //socket.to(User2.id).emit("message", { ...messageBox,name:User2.name});
- // io.sockets.socket(User2.id).emit("message", { ...messageBox,name:User2.name})
-  //io.sockets.to(User2.id).emit("message", { ...messageBox,name:User2.name});
-  //socket_server.sockets.socket(socket_id).emit(); 
- // io.to(`${User2.id}`).emit("message", { ...messageBox,name:User2.name});
-  //io.sockets.sockets[User2.id].emit("message", { ...messageBox,name:User2.name});
-  //var id=obj.id
-  //console.log(id)
-  //io.sockets.connected[id].emit("message", { ...messageBox,name:User2.name});
    }
 
   callback();
